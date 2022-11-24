@@ -64,5 +64,5 @@ async Task test(HttpContext context)
     byte[] bytes = Encoding.ASCII.GetBytes("foo");
     await context.Response.Body.WriteAsync(bytes);
 }
-app.Run("http://localhost:80");
+app.Run("http://+:80");
 

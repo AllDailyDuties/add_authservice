@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tI01vSq0rFBVsDebyf1OdOPWN86kFCsvl6ZGHQB4Rr0iTJYl82Bn1vFZg6GciMDiB3J7SmO6q+ENcnwaRw3ITA==",
+  "dgSpecHash": "OrRuCuaLYVcMqnMbE79PgQhjtBkJcINNe+K06rSeUL7wBXvqqOlbsdyBjLggIa6ikbywMgzSUP/GEdC0fUd2qQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\koen\\Desktop\\Semester6\\individual\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService.csproj",
+  "projectFilePath": "C:\\Users\\koen\\Desktop\\Semester6\\individual\\organisation\\add_authservice\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\koen\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\koen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
