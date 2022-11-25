@@ -5,6 +5,7 @@ using AllDailyDuties_AuthService.Services.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using AllDailyDuties_AuthService.Models.Users;
+using AllDailyDuties_AuthService.Middleware.Messaging;
 
 namespace AllDailyDuties_AuthService.Services
 {
@@ -13,13 +14,16 @@ namespace AllDailyDuties_AuthService.Services
         private DataContext _context;
         private readonly IMapper _mapper;
         private IJwtUtils _jwtUtils;
+        private readonly IRabbitMQProducer _rabbit;
 
-        public UserService(DataContext context, IMapper mapper, IJwtUtils jwtUtils)
+        public UserService(DataContext context, IMapper mapper, IJwtUtils jwtUtils, IRabbitMQProducer rabbit)
         {
             _context = context;
             _mapper = mapper;
             _jwtUtils = jwtUtils;
+            _rabbit = rabbit;
         }
+
         public AuthResponse Authenticate(AuthRequest model)
         {
             var user = _context.Users.SingleOrDefault(x => x.Username == model.Username);
@@ -63,6 +67,12 @@ namespace AllDailyDuties_AuthService.Services
             // save user
             _context.Users.Add(user);
             _context.SaveChanges();
+        }
+
+        public async void SendUserModel(Guid uid)
+        {
+            var user = GetById(uid);
+            Console.WriteLine(GetById(uid).Email);
         }
 
         // Helper method(s)

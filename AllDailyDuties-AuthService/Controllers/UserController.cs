@@ -67,6 +67,23 @@ namespace AllDailyDuties_AuthService.Controllers
 
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Route("/GetOne/{*id}")]
+        public IActionResult GetOne(Guid id)
+        {
+            try
+            {
+                var users = _userService.GetById(id);
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
+
+        }
+
         [HttpPost]
         public IActionResult Create(CreateRequest model)
         {

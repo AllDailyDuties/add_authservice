@@ -8,5 +8,6 @@ namespace AllDailyDuties_AuthService.Services.Interfaces
         IEnumerable<User> GetAll();
         User GetById(Guid id);
         void Create(CreateRequest model);
+        void SendUserModel(Guid uid);
     }
 }
