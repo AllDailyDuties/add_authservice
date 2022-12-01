@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using AllDailyDuties_AuthService.Models.Users;
 using AllDailyDuties_AuthService.Middleware.Messaging;
+using AllDailyDuties_AuthService.Models.Shared;
 
 namespace AllDailyDuties_AuthService.Services
 {
@@ -71,7 +72,8 @@ namespace AllDailyDuties_AuthService.Services
 
         public async void SendUserModel(Guid uid)
         {
-            var user = GetById(uid);
+            var user = getTaskItemUser(uid);
+            _rabbit.SendMessage(user);
             Console.WriteLine(GetById(uid).Email);
         }
 
@@ -81,6 +83,14 @@ namespace AllDailyDuties_AuthService.Services
             var user = _context.Users.Find(id);
             if (user == null) throw new KeyNotFoundException("User not found");
             return user;
+        }
+        private TaskItemUser getTaskItemUser(Guid id)
+        {
+            var user = _context.Users.Find(id);
+            Guid newId = Guid.NewGuid();
+            TaskItemUser taskItemUser = new TaskItemUser(newId, user.Id, user.Username, user.Email);
+            if (user == null) throw new KeyNotFoundException("User not found");
+            return taskItemUser;
         }
     }
 }

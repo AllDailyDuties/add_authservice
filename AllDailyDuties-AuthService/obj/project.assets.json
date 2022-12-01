@@ -1994,21 +1994,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\koen\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\koen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\koen\\fontys\\k8s\\repos\\add_authservice\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService.csproj",
+      "projectUniqueName": "C:\\Users\\koen\\Desktop\\Semester6\\individual\\organisation\\add_authservice\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService.csproj",
       "projectName": "AllDailyDuties-AuthService",
-      "projectPath": "C:\\Users\\koen\\fontys\\k8s\\repos\\add_authservice\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService.csproj",
+      "projectPath": "C:\\Users\\koen\\Desktop\\Semester6\\individual\\organisation\\add_authservice\\AllDailyDuties-AuthService\\AllDailyDuties-AuthService.csproj",
       "packagesPath": "C:\\Users\\koen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\koen\\fontys\\k8s\\repos\\add_authservice\\AllDailyDuties-AuthService\\obj\\",
+      "outputPath": "C:\\Users\\koen\\Desktop\\Semester6\\individual\\organisation\\add_authservice\\AllDailyDuties-AuthService\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\koen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -2018,7 +2014,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\latest\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2110,7 +2105,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

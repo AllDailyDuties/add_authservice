@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AllDailyDuties_AuthService.Middleware.Messaging
 {
-    public class RabbitMQProducer
+    public class RabbitMQProducer : IRabbitMQProducer
     {
         public void SendMessage<T>(T message)
         {
