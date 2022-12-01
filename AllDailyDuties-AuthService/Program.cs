@@ -14,15 +14,9 @@ using System.Reflection;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-//TODO: Set this up to only accept the forwarded headers from the load balancer
-var factory = new ConnectionFactory
-{
-    HostName = "localhost"
-};
-//Create the RabbitMQ connection using connection factory details as i mentioned above
-var connection = factory.CreateConnection();
+
 //Here we create channel with session and model
-using var channel = connection.CreateModel();
+using var channel = RabbitMQConnection.Instance.Connection.CreateModel();
 
 // Add services to the container.
 builder.Services.AddDbContext<DataContext>();

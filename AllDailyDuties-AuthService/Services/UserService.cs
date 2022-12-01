@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using AllDailyDuties_AuthService.Models.Users;
 using AllDailyDuties_AuthService.Middleware.Messaging;
 using AllDailyDuties_AuthService.Models.Shared;
+using RabbitMQ.Client;
 
 namespace AllDailyDuties_AuthService.Services
 {
@@ -70,10 +71,10 @@ namespace AllDailyDuties_AuthService.Services
             _context.SaveChanges();
         }
 
-        public async void SendUserModel(Guid uid)
+        public async void SendUserModel(Guid uid, IBasicProperties props)
         {
             var user = getTaskItemUser(uid);
-            _rabbit.SendMessage(user);
+            _rabbit.SendMessage(user, "user_object", props);
             Console.WriteLine(GetById(uid).Email);
         }
 

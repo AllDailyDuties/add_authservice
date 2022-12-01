@@ -2,19 +2,28 @@
 
 namespace AllDailyDuties_AuthService.Middleware.Messaging
 {
-    public class RabbitMQConnection
-    {
-        public IModel Connect()
+   public class RabbitMQConnection
+   {
+        private static readonly Lazy<RabbitMQConnection> Lazy = new Lazy<RabbitMQConnection>(() => new RabbitMQConnection());
+
+        private RabbitMQConnection()
         {
-            var factory = new ConnectionFactory
+            IConnectionFactory connectionFactory = new ConnectionFactory
             {
-                HostName = "localhost"
+                HostName = "127.0.0.1",
+                Port = 5672,
+                UserName = "guest",
+                Password = "guest"
             };
-            //Create the RabbitMQ connection using connection factory details as i mentioned above
-            var connection = factory.CreateConnection();
-            //Here we create channel with session and model
-            using var channel = connection.CreateModel();
-            return channel;
+
+            Connection = connectionFactory.CreateConnection();
         }
+
+        public static RabbitMQConnection Instance
+        {
+            get { return Lazy.Value; }
+        }
+
+        public IConnection Connection { get; }
     }
 }

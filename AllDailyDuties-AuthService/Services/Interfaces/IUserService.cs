@@ -1,4 +1,5 @@
 ﻿using AllDailyDuties_AuthService.Models.Users;
+using RabbitMQ.Client;
 
 namespace AllDailyDuties_AuthService.Services.Interfaces
 {
@@ -8,6 +9,6 @@ namespace AllDailyDuties_AuthService.Services.Interfaces
         IEnumerable<User> GetAll();
         User GetById(Guid id);
         void Create(CreateRequest model);
-        void SendUserModel(Guid uid);
+        void SendUserModel(Guid uid, IBasicProperties props);
     }
 }
