@@ -89,7 +89,7 @@ namespace AllDailyDuties_AuthService.Services
         {
             var user = _context.Users.Find(id);
             Guid newId = Guid.NewGuid();
-            TaskItemUser taskItemUser = new TaskItemUser(newId, user.Id, user.Username, user.Email);
+            TaskItemUser taskItemUser = new TaskItemUser(user.Id, user.Username, user.Email);
             if (user == null) throw new KeyNotFoundException("User not found");
             return taskItemUser;
         }

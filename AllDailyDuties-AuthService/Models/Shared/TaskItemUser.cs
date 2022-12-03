@@ -7,9 +7,8 @@
         public string Username { get; set; }
         public string Email { get; set; }
 
-        public TaskItemUser(Guid _id, Guid _userId, string _username, string _email)
+        public TaskItemUser(Guid _userId, string _username, string _email)
         {
-            Id = _id;
             UserId = _userId;
             Username = _username;
             Email = _email;
