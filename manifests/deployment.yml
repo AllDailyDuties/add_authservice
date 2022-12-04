@@ -18,7 +18,7 @@ spec:
       - name: addauthservice
         image: localhost:32000/addauthservice:latest
         ports:
-        - containerPort: 80
+        - containerPort: 9000
         resources:
           limits:
             memory: 2Gi
