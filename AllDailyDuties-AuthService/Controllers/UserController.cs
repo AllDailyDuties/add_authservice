@@ -67,8 +67,9 @@ namespace AllDailyDuties_AuthService.Controllers
 
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "Admin")]
         [Route("/GetOne/{*id}")]
+        [HttpGet]
         public IActionResult GetOne(Guid id)
         {
             try
